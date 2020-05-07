@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="main.catchExceptions">
+    <Position X="5.75" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>catchExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="main.tcpchk">
+    <Position X="3.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAQAABAAAAAAEAAAgAABAACAACAAAAIAAA=</HashCode>
+      <FileName>tcpchk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="main.main">
+    <Position X="3.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="main.argumentValidation">
+    <Position X="3.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAIAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>argumentValidation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="main.LiteralConsts">
+    <Position X="8.25" Y="2.25" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="main.LiteralConsts.SckExceptions" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LiteralConsts.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="main.LiteralConsts.ArgErrors" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LiteralConsts.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BBIAAAAAAAAAgAAAAEIAAAECAEAAEAAAAAAAgAAAgAA=</HashCode>
+      <FileName>LiteralConsts.cs</FileName>
+      <NewMemberFileName>Literalconsts.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="main.configInstance">
+    <Position X="5.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAIAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>configInstance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
