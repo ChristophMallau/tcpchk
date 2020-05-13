@@ -56,7 +56,6 @@ namespace main
 
 
                             case (int)LiteralConsts.Arguments.ARG_PortLong:
-                                if
                                 clRTConfig.Set_PortAsString(args[iArgs+1]);
                             break;
 
