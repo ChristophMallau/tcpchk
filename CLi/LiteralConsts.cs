@@ -60,7 +60,7 @@ namespace main
             this.strHelpTXT = "USAGE: 'tcpchk [-s|--stealth-mode] -H <host> -p <port>'\n" +
                                "\n\n--host,-H\t\t : hostname / ipaddress" +
                                "\n--port,-p\t\t : (tcp)port" +
-                               "\n--stealth-mode,-s\t\t : will supress any textual output on stdout [usefull if designated to be invoked by CLI-scripts]" +
+                               "\n--stealth-mode,-s\t : will supress any textual output on stdout [usefull if designated to be invoked by CLI-scripts]" +
                                "\n--help,-h,/?\t\t : will show this text" +
                                "\n\nsend bug reports in english, pls to 'christoph.mallau@sensw.berlin.de\n" +
                                "Senatsverwaltung fuer Stadtentwicklung und Wohnen.\n\n";
