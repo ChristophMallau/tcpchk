@@ -36,37 +36,19 @@ namespace main
               ARG_HelpLong = 4,
               ARG_HelpShort_QM = 5,
               ARG_HelpShort_Char = 6,
+              ARG_StealthModeShort = 7,
+              ARG_StealthModeLong = 8
         }
 
         // returned strings to overwrite exceptions
 
-        /*
-         
-            protected String strARG_HostLong = null,
-            protected String strARG_HostShort = null,
-            protected String strARG_PortLong = null,
-            protected String strARG_PortShort = null,
-            protected String strARG_HelpLong = null,
-            protected String strARG_HelpShort_QM = null,
-            protected String strARG_HelpShort_Char = null,
-        }
-         */
 
         public String[] strArguments = null;
         public String[] strErrMsg = null;
         public String strHelpNotice = null;
         public String strHelpTXT = null;
 
-        /*
-        public String strErrMsg_HostNotFound = null;
-        public String strErrMsg_ConnectionRefused = null;
-        public String strErrMsg_NetworkDown = null;
-        public String strErrMsg_NetworkUnreachable = null;
-        public String strErrMsg_ConnectionTimeout = null;
-        public String strHelpTXT = null;
-        public String strHelpNotice = null;
-        */
-   
+
         public LiteralConsts()
         {
             // errMsg
@@ -75,9 +57,10 @@ namespace main
             this.strHelpNotice = "USAGE: 'tcpchk -h <host> -p <port>'\n\npls, check one of these:\n\n'tcpchk " +
                            "--help'\n'tcpchk -h'\n'tcpchk /?' ... bye\n\n";
 
-            this.strHelpTXT = "USAGE: 'tcpchk -H <host> -p <port>'\n" +
+            this.strHelpTXT = "USAGE: 'tcpchk [-s|--stealth-mode] -H <host> -p <port>'\n" +
                                "\n\n--host,-H\t\t : hostname / ipaddress" +
                                "\n--port,-p\t\t : (tcp)port" +
+                               "\n--stealth-mode,-s\t\t : will supress any textual output on stdout [usefull if designated to be invoked by CLI-scripts]" +
                                "\n--help,-h,/?\t\t : will show this text" +
                                "\n\nsend bug reports in english, pls to 'christoph.mallau@sensw.berlin.de\n" +
                                "Senatsverwaltung fuer Stadtentwicklung und Wohnen.\n\n";
@@ -92,17 +75,16 @@ namespace main
             this.strErrMsg[(int)genExceptions.ArgErr_InsufficientArguments] = "err: insufficient arguments\n";
             this.strErrMsg[(int)genExceptions.ArgErr_InvalidIP] = "err: malformed hostname/ip-address (pls use four-octet notation OR FQDN)\n";
             this.strErrMsg[(int)genExceptions.ArgErr_NonValidPort] = "err: port must be a numeric expression between 1-65535\n";
-            this.strErrMsg[(int)genExceptions.ArgErr_UnknownArgument] = "err: ambigous/unknown arguments present\n\n" +
-                                                                        this.strHelpNotice;
-         
-           
+            this.strErrMsg[(int)genExceptions.ArgErr_UnknownArgument] = "err: ambigous/unknown arguments present\n\n" + this.strHelpNotice;
+
+
 
 
 
 
             // arguments
 
-            this.strArguments = new String[7];
+            this.strArguments = new String[9];
             this.strArguments[(int)Arguments.ARG_HelpLong] = "--help";
             this.strArguments[(int)Arguments.ARG_HelpShort_Char] = "-h";
             this.strArguments[(int)Arguments.ARG_HelpShort_QM] = "/?";
@@ -110,6 +92,8 @@ namespace main
             this.strArguments[(int)Arguments.ARG_HostShort] = "-H";
             this.strArguments[(int)Arguments.ARG_PortLong] = "--port";
             this.strArguments[(int)Arguments.ARG_PortShort] = "-p";
+            this.strArguments[(int)Arguments.ARG_StealthModeShort] = "-s";
+            this.strArguments[(int)Arguments.ARG_StealthModeLong] = "--stealth-mode";
             
 
         }

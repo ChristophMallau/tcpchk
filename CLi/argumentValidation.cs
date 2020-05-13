@@ -10,6 +10,7 @@ namespace main
         protected LiteralConsts clConsts;
         protected String[] strOptions;
         public int iReturnCode;
+        public bool bStealthMode;
 
         //protected configInstance clRunTimeConfig;
 
@@ -20,11 +21,12 @@ namespace main
             this.strOptions = new String[11];
             this.clConsts = new LiteralConsts();
             this.iReturnCode = -1;
+            this.bStealthMode = false;
      
            
             for (int iArgs = 0; iArgs < args.Length; iArgs++)
             {
-                for (int iCount = 0; iCount < 7; iCount++)
+                for (int iCount = 0; iCount < 9; iCount++)
                 {  //   this.strOptions[iCount] = "String(" + Convert.ToString(1 + iCount) + "):NULL";
 
 
@@ -33,6 +35,16 @@ namespace main
                     {
                         switch(iCount)
                         {
+                            case (int)LiteralConsts.Arguments.ARG_StealthModeShort:
+                                this.bStealthMode = true;
+                                clRTConfig.Set_StealthMode(true);
+                            break;
+
+                            case (int)LiteralConsts.Arguments.ARG_StealthModeLong:
+                                this.bStealthMode = true;
+                                clRTConfig.Set_StealthMode(true);
+                            break;
+
                             case (int)LiteralConsts.Arguments.ARG_HostLong:
                                 if (args[iArgs + 1].Length < 3)
                                 {
@@ -95,7 +107,8 @@ namespace main
 
                  }
             }
-            Console.Write("\ntesting '{0}:{1}'\n", clRTConfig.Get_HostAsString(), clRTConfig.Get_PortAsString());  // for testing purposes
+            if(!(clRTConfig.Get_StealthMode()))
+                Console.Write("\ntesting '{0}:{1}'\n", clRTConfig.Get_HostAsString(), clRTConfig.Get_PortAsString());  // for testing purposes
            /* 
             * Console.WriteLine("\n\npress key, pls");
             System.Console.ReadKey(true); 

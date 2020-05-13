@@ -1,10 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation. Alle Rechte vorbehalten.
-
-// cmdline1.cs
-// Argumente: A B C
-
-
-using System;
+﻿using System;
 using System.Text;
 using System.IO;
 using System.Net;
@@ -31,7 +25,7 @@ namespace main
                     break;  
           
                     default:
-                    Console.WriteLine("\ngenException_No:'{0}'", iReturnCode);
+                    Console.WriteLine("\n{0}", iReturnCode);
                     break;
             
             }   // anything greater than 0 must be considered a failure

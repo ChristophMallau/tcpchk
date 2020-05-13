@@ -21,20 +21,15 @@ namespace main
        private String strPortRangeEND;
        private bool bVerbose;
        private bool bDebugMode;
+       private bool bStealthMode;
     
 
        public configInstance()
        {
 
-           /*
-           this.Set_IPAddress();
-           this.Set_IPEndPoint();
-           this.Set_IPHosteEntry();
-           this.Set_Socket();
-           */
-
            this.bDebugMode = false;
            this.bVerbose = false;
+           this.bStealthMode = false;
        }
 
 
@@ -48,7 +43,7 @@ namespace main
        public void Set_PortAsString(String strPort)             { this.strPort = strPort; }
        public void Set_PortAsStringRangeBEGIN(String strPortRangeBEGIN) { this.strPortRangeBEGIN = strPortRangeBEGIN; }
        public void Set_PortAsStringRangeEND(String strPortRangeEND) { this.strPortRangeEND = strPortRangeEND; }
-
+       public void Set_StealthMode(bool bStealthMode) { this.bStealthMode = bStealthMode; }
 
         // geties
 
@@ -60,6 +55,7 @@ namespace main
        public String Get_PortAsString()         {   return this.strPort; }
        public String Get_PortAsStringRangeBEGIN() { return this.strPortRangeBEGIN; }
        public String Get_PortAsStringRangeEND() { return this.strPortRangeEND; }
+       public bool Get_StealthMode() { return this.bStealthMode; }
 
 
 

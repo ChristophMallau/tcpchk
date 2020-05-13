@@ -13,13 +13,7 @@ namespace main
     public class tcpchk
     {
 
-        /*
-        private IPEndPoint hndlEndpoint;
-        private IPHostEntry hndlServer;
-        private Socket hndlSck;
-        private IPAddress hndlTargetAddr;
-         * */
-        
+            
         private argumentValidation clArgsCheck;
         private configInstance clRTConfig; 
         private catchExceptions clCatchSckEcpt;
@@ -51,7 +45,7 @@ namespace main
             catch (SocketException SckError)                                    // catch socketExceptions
             {
                 
-                    this.clCatchSckEcpt.catchSocketExceptions(SckError);
+                    this.clCatchSckEcpt.catchSocketExceptions(SckError, clRTConfig.Get_StealthMode());
 
             }   // catch()
         }     // overloaded constructor             
@@ -78,8 +72,9 @@ namespace main
                     this.clRTConfig.Get_Socket().Send(byMsg, SocketFlags.None);              // shout to server 
                         if (this.clRTConfig.Get_Socket().Connected)                         // to be ready to receive, one crittical impact is that once this member was called, the socket state is gone
                         {                                                   // to cope with that, socket state is beeing saved in private class property
-                            this.bSckConn = true;                           
-                            Console.WriteLine("SYN_ACK ... remote port is listening.'", args[0], args[1]);
+                            this.bSckConn = true;
+                            if(!(clRTConfig.Get_StealthMode()))
+                                Console.WriteLine("SYN_ACK ... remote port is listening.'", args[0], args[1]);
                         }
                         else
                             ;
@@ -89,7 +84,7 @@ namespace main
 
 
                
-            catch (SocketException SckError) {  return(int)clCatchSckEcpt.catchSocketExceptions(SckError);   }
+            catch (SocketException SckError) {  return(int)clCatchSckEcpt.catchSocketExceptions(SckError,clRTConfig.Get_StealthMode());   }
             return clArgsCheck.iReturnCode;
         }   // member method
 
